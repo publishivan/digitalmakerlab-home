@@ -3,353 +3,197 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DigitalMakerLab — Trasforma la tua passione in un progetto concreto</title>
-  <meta name="description" content="DigitalMakerLab: metodo e strumenti operativi per trasformare una passione in un progetto concreto. Scarica la Mappa Operativa dei Primi 90 Giorni." />
-  <meta name="robots" content="index,follow" />
+  <meta name="description" content="DigitalMakerLab — Monetizza le tue passioni online. Etsy, Shopify e Amazon Handmade." />
+  <title>DigitalMakerLab</title>
+
+  <!-- Font (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#f8f8f8;
-      --card:#ffffff;
-      --text:#111111;
-      --muted:#666666;
-      --brand:#f42367; /* CTA (come in Systeme) */
-      --brand2:#149efc; /* check icon */
-      --shadow: 0 10px 30px rgba(0,0,0,.08);
-      --radius: 18px;
-      --max: 1120px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:#fff;
-    }
-    a{color:inherit}
-    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
-    .topbar{
-      position:sticky; top:0; z-index:100;
-      background:rgba(255,255,255,.9);
-      backdrop-filter:saturate(180%) blur(10px);
-      border-bottom:1px solid rgba(0,0,0,.06);
-    }
-    .topbar-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      text-decoration:none;
-    }
-    .brand img{height:34px; width:auto; display:block}
-    .nav{
-      display:flex; gap:18px; align-items:center;
-      font-size:14px; color:var(--muted);
-    }
-    .nav a{color:var(--muted); text-decoration:none}
-    .nav a:hover{color:var(--text)}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:14px 18px;
-      border-radius:999px;
-      font-weight:700;
-      text-decoration:none;
-      border:1px solid transparent;
-      transition:transform .08s ease, opacity .08s ease;
-      white-space:nowrap;
-    }
-    .btn:active{transform:translateY(1px)}
-    .btn-primary{background:var(--brand); color:#fff}
-    .btn-ghost{background:transparent; border-color:rgba(0,0,0,.12); color:var(--text)}
-    .hero{
-      background:var(--bg);
-      padding:54px 0 28px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap:28px;
-      align-items:start;
-    }
-    h1{
-      margin:0 0 14px;
-      font-size:52px;
-      line-height:1.05;
-      letter-spacing:-2px;
-    }
-    .lead{
-      font-size:18px;
-      color:var(--muted);
-      line-height:1.7;
-      margin:0 0 18px;
-    }
-    .bullets{
-      margin:18px 0 0;
-      padding:0;
-      list-style:none;
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.7;
-    }
-    .bullets li{
-      display:flex; gap:12px; align-items:flex-start;
-      padding:6px 0;
-    }
-    .check{
-      width:22px; height:22px; flex:0 0 22px;
-      margin-top:3px;
-      border-radius:999px;
-      background:rgba(20,158,252,.12);
-      display:grid; place-items:center;
-      color:var(--brand2);
-      font-weight:900;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:26px;
-      border:1px solid rgba(0,0,0,.06);
-    }
-    .card h3{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:-.2px;
-    }
-    .card p{margin:0 0 16px; color:var(--muted); line-height:1.7}
-    .cta-row{display:flex; gap:12px; flex-wrap:wrap}
-    .fineprint{
-      margin-top:14px;
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.6;
-    }
-    section{
-      padding:70px 0;
-    }
-    .section-muted{background:var(--bg)}
-    .title{
-      text-align:center;
-      font-size:38px;
-      margin:0 0 14px;
-      letter-spacing:-1.6px;
-    }
-    .text-center{max-width:860px; margin:0 auto; text-align:center; color:var(--muted); font-size:19px; line-height:1.75}
-    .grid-2{
-      margin-top:26px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:18px;
-    }
-    .mini{
-      padding:22px;
-      border-radius:16px;
-      background:#fff;
-      border:1px solid rgba(0,0,0,.06);
-    }
-    .mini h4{margin:0 0 8px; font-size:18px}
-    .mini p{margin:0; color:var(--muted); line-height:1.7}
-    .about{
-      max-width:900px;
-      margin:0 auto;
-      color:var(--muted);
-      font-size:18px;
-      line-height:1.8;
-    }
-    .about strong{color:var(--text)}
-    .final-cta{
-      background:var(--bg);
-      padding:70px 0;
-    }
-    .final-cta .card{padding:32px}
-    footer{
-      background:#1f1f1f;
-      color:#cfcfcf;
-      padding:32px 0;
-      font-size:14px;
-    }
-    footer a{color:#cfcfcf; text-decoration:none}
-    footer a:hover{text-decoration:underline}
-    .footer-inner{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:12px; flex-wrap:wrap;
+      --navy:#0B1F3B;
+      --text:#0B1F3B;
+      --muted:rgba(11,31,59,.72);
+      --border:rgba(11,31,59,.16);
+      --bg:#ffffff;
     }
 
-    /* responsive */
-    @media (max-width: 920px){
-      .hero-grid{grid-template-columns:1fr}
-      h1{font-size:42px}
-      .nav{display:none}
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    @media (max-width: 520px){
-      h1{font-size:38px}
-      .title{font-size:32px}
-      .btn{width:100%}
-      .cta-row{gap:10px}
-      .grid-2{grid-template-columns:1fr}
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:56px 20px;
+    }
+
+    .card{
+      width:min(720px, 100%);
+      text-align:center;
+      padding:44px 22px;
+    }
+
+    .logo{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:22px;
+    }
+
+    .logo img{
+      height:46px;
+      width:auto;
+      display:block;
+    }
+
+    .brand{
+      font-weight:700;
+      letter-spacing:.2px;
+      font-size:20px;
+      line-height:1;
+    }
+
+    h1{
+      margin:16px 0 10px;
+      font-size:clamp(28px, 4.2vw, 44px);
+      line-height:1.06;
+      letter-spacing:-.4px;
+    }
+
+    .sub{
+      margin:0 auto 26px;
+      max-width:52ch;
+      font-size:clamp(14px, 1.6vw, 18px);
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      text-decoration:none;
+      font-weight:600;
+      transition:transform .08s ease, background-color .2s ease, border-color .2s ease;
+      user-select:none;
+    }
+
+    .btn:active{ transform:translateY(1px); }
+
+    .btn.primary{
+      background:var(--navy);
+      color:#fff;
+      border-color:var(--navy);
+    }
+
+    .btn.primary:hover{ filter:brightness(1.03); }
+
+    .btn.ghost{
+      background:#fff;
+      color:var(--navy);
+    }
+
+    .btn.ghost:hover{
+      background:rgba(11,31,59,.04);
+      border-color:rgba(11,31,59,.26);
+    }
+
+    footer{
+      padding:18px 20px 26px;
+      text-align:center;
+      color:rgba(11,31,59,.55);
+      font-size:12px;
+      line-height:1.5;
+    }
+
+    footer a{
+      color:rgba(11,31,59,.55);
+      text-decoration:none;
+      border-bottom:1px solid transparent;
+    }
+    footer a:hover{ border-bottom-color:rgba(11,31,59,.28); }
+
+    .divider{
+      width:min(520px, 92%);
+      height:1px;
+      background:rgba(11,31,59,.10);
+      margin:26px auto 0;
+    }
+
+    /* Small screens */
+    @media (max-width:420px){
+      .card{ padding:34px 14px; }
+      .logo img{ height:40px; }
     }
   </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="container">
-      <div class="topbar-inner">
-        <a class="brand" href="#top" aria-label="DigitalMakerLab Home">
-          <img src="https://d1yei2z3i6k35z.cloudfront.net/16464118/6996d7ca9d252_png1.png" alt="DigitalMakerLab" />
-        </a>
-
-        <nav class="nav" aria-label="Navigazione">
-          <a href="#perche">Perché</a>
-          <a href="#per-chi">Per chi</a>
-          <a href="#chi-siamo">Chi siamo</a>
-          <a class="btn btn-primary" href="https://bonus.digitalmakerlab.it/" target="_blank" rel="noopener">Scarica la Mappa 90 Giorni</a>
-        </nav>
-
-        <a class="btn btn-primary" href="https://bonus.digitalmakerlab.it/" target="_blank" rel="noopener">Scarica la Mappa 90 Giorni</a>
-      </div>
-    </div>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <h1>Trasforma la tua passione in un progetto concreto nei prossimi 90 giorni.</h1>
-            <p class="lead">DigitalMakerLab è un approccio operativo: meno entusiasmo, più direzione. Se hai letto il libro, qui trovi il ponte tra “capito” e “fatto”.</p>
-
-            <ul class="bullets">
-              <li><span class="check">✓</span><span><strong>Roadmap settimanale</strong> già pronta e strutturata</span></li>
-              <li><span class="check">✓</span><span><strong>10 errori reali</strong> che bloccano il 90% dei principianti</span></li>
-              <li><span class="check">✓</span><span><strong>Sistema minimo</strong> per lavorare 2–3 ore a settimana senza burnout</span></li>
-            </ul>
-          </div>
-
-          <aside class="card" aria-label="Call to action">
-            <h3>Scarica la Mappa Operativa dei Primi 90 Giorni</h3>
-            <p>Accesso immediato. Nessuno spam. Disiscrizione con un clic.</p>
-
-            <div class="cta-row">
-              <a class="btn btn-primary" href="https://bonus.digitalmakerlab.it/" target="_blank" rel="noopener">
-                Vai alla pagina del bonus
-              </a>
-              <a class="btn btn-ghost" href="#perche">Scopri di più</a>
-            </div>
-
-            <div class="fineprint">
-              Acconsentirai al trattamento dei tuoi dati per ricevere il bonus e comunicazioni informative relative al progetto DigitalMakerLab, in conformità alla Privacy Policy.
-            </div>
-          </aside>
+  <div class="wrap">
+    <main>
+      <section class="card" aria-label="Homepage DigitalMakerLab">
+        <!-- LOGO -->
+        <div class="logo">
+          <!-- Sostituisci LOGO_URL con il tuo logo (es: img/logo.png oppure https://...) -->
+          <img src="LOGO_URL" alt="DigitalMakerLab logo" onerror="this.remove();document.getElementById('brandText').style.display='inline-block';" />
+          <span class="brand" id="brandText" style="display:none;">DigitalMakerLab</span>
         </div>
-      </div>
-    </section>
 
-    <section id="perche" class="section-muted">
-      <div class="container">
-        <h2 class="title">Perché questo è diverso</h2>
-        <p class="text-center">
-          Molti leggono un libro, si entusiasmano… e poi non fanno nulla.
-          Non per mancanza di motivazione. Ma per mancanza di direzione.
-          <br><br>
-          Qui trovi una struttura applicabile: una guida operativa pensata per farti muovere con lucidità,
-          evitando dispersione e gli errori più comuni dei primi mesi.
-          <br><br>
-          Non troverai teoria. Troverai struttura.
+        <h1>Monetizza le tue passioni online.</h1>
+        <p class="sub">
+          Costruisci il tuo business online su Etsy, Shopify e Amazon Handmade.
         </p>
 
-        <div class="grid-2">
-          <div class="mini">
-            <h4>Direzione</h4>
-            <p>Obiettivi chiari, priorità, ordine delle azioni. Sai cosa fare e in che sequenza.</p>
-          </div>
-          <div class="mini">
-            <h4>Continuità</h4>
-            <p>Un sistema minimo che regge anche se hai poco tempo. Progressi piccoli, ma reali.</p>
-          </div>
+        <div class="actions">
+          <!-- CTA principale: bonus -->
+          <a class="btn primary" href="BONUS_URL" target="_blank" rel="noopener">Scarica il bonus gratuito</a>
+          <!-- CTA secondaria: Amazon -->
+          <a class="btn ghost" href="AMAZON_URL" target="_blank" rel="noopener">Vedi il libro su Amazon</a>
         </div>
-      </div>
-    </section>
 
-    <section id="per-chi">
-      <div class="container">
-        <h2 class="title">A chi è rivolto</h2>
-        <p class="text-center">
-          È per te se:
-          <br>• Hai una passione ma non sai da dove iniziare
-          <br>• Hai troppe idee e nessuna direzione chiara
-          <br>• Hai paura di perdere tempo o fare errori inutili
-          <br>• Vuoi costruire qualcosa di tuo senza stravolgere la tua vita
-          <br><br>
-          Se ti riconosci anche solo in uno di questi punti, sei nel posto giusto.
-        </p>
-      </div>
-    </section>
+        <div class="divider" aria-hidden="true"></div>
+      </section>
+    </main>
 
-    <section id="chi-siamo" class="section-muted">
-      <div class="container">
-        <h2 class="title">Chi siamo</h2>
-        <div class="about">
-          <p><strong>Adrian M. Morell</strong> è autore e fondatore del progetto <strong>DigitalMakerLab</strong>.</p>
-          <p>
-            Il lavoro nasce da una convinzione semplice: oggi è possibile trasformare una passione in un progetto concreto,
-            ma serve una direzione chiara.
-          </p>
-          <p>
-            Attraverso libri, strumenti operativi e contenuti pratici, DigitalMakerLab aiuta creativi, artigiani e professionisti
-            a costruire sistemi sostenibili evitando gli errori più comuni dei primi mesi.
-          </p>
-          <p>
-            Nessuna illusione. Nessuna scorciatoia. Solo metodo, lucidità e continuità.
-          </p>
-        </div>
-      </div>
-    </section>
+    <footer>
+      © <span id="y"></span> DigitalMakerLab ·
+      <a href="privacy.html">Privacy</a> ·
+      <a href="cookie.html">Cookie</a> ·
+      <a href="mailto:info@digitalmakerlab.it">info@digitalmakerlab.it</a>
+    </footer>
+  </div>
 
-    <section class="final-cta">
-      <div class="container">
-        <div class="card">
-          <h2 style="margin:0 0 10px; font-size:40px; letter-spacing:-1.6px;">
-            Inizia ora.<br>
-            Scarica la Mappa Operativa dei Primi 90 Giorni<br>
-            e trasforma l’ispirazione in azione.
-          </h2>
-
-          <p style="margin:0 0 18px; color:var(--muted); font-size:18px; line-height:1.7;">
-            Accesso immediato • Nessuno spam • Disiscrizione con un clic
-          </p>
-
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://bonus.digitalmakerlab.it/" target="_blank" rel="noopener">
-              Scarica ora la Mappa 90 Giorni
-            </a>
-            <a class="btn btn-ghost" href="#top">Torna su</a>
-          </div>
-
-          <div class="fineprint">
-            © 2026 Adrian M. Morell – DigitalMakerLab. Tutti i diritti riservati.
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <div>© 2026 Adrian M. Morell – DigitalMakerLab</div>
-        <div>
-          <a href="#" onclick="alert('Inserisci qui il link alla Privacy Policy (può essere una pagina su GitHub Pages o un PDF).'); return false;">Privacy Policy</a>
-          &nbsp;•&nbsp;
-          <a href="#" onclick="alert('Inserisci qui il link ai Termini (opzionale).'); return false;">Termini</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
