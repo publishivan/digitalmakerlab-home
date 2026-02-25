@@ -1,29 +1,258 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DigitalMakerLab | Costruisci il tuo business online</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#0f1c2e;color:#fff;text-align:center}
-.container{padding:80px 20px}
-h1{font-size:40px;max-width:900px;margin:0 auto 18px}
-p{font-size:20px;max-width:760px;margin:0 auto 28px;line-height:1.5}
-a.button{display:inline-block;background:#ff7a00;color:#fff;padding:15px 28px;text-decoration:none;font-weight:700;border-radius:8px}
-.footer{margin-top:70px;font-size:13px;opacity:.65}
-.small{margin-top:14px;font-size:14px;opacity:.8}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalMakerLab | Monetizza le tue passioni online</title>
+  <meta name="description" content="Strategie pratiche per costruire il tuo business online su Etsy, Shopify e Amazon Handmade. Accedi al bonus gratuito: Mappa Operativa dei Primi 90 Giorni." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0b1628;
+      --panel:#0f1f36;
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.75);
+      --muted2:rgba(255,255,255,.55);
+      --accent:#ff7a00;
+      --stroke:rgba(255,255,255,.12);
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(255,122,0,.18), transparent 55%),
+        radial-gradient(800px 520px at 80% 25%, rgba(255,255,255,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), #07101f 70%);
+      color:var(--text);
+    }
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:38px 20px 70px;
+    }
+    .top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:34px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      color:var(--text);
+    }
+    .logo{
+      width:44px;height:44px;border-radius:999px;
+      border:1.5px solid rgba(255,255,255,.22);
+      display:grid;place-items:center;
+      letter-spacing:.5px;
+      font-weight:700;
+    }
+    .brand span{
+      font-weight:700;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .pill{
+      border:1px solid rgba(255,255,255,.16);
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      text-decoration:none;
+      transition: .2s ease;
+      white-space:nowrap;
+    }
+    .pill:hover{border-color:rgba(255,255,255,.28); color:#fff}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+    h1{
+      font-size:44px;
+      line-height:1.08;
+      margin:0 0 14px;
+      letter-spacing:-.4px;
+    }
+    @media (max-width: 520px){
+      h1{font-size:34px}
+    }
+    .lead{
+      font-size:18px;
+      line-height:1.6;
+      color:var(--muted);
+      margin:0 0 22px;
+    }
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:10px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      transition:.18s ease;
+      border:1px solid transparent;
+    }
+    .btnPrimary{
+      background:var(--accent);
+      color:#fff;
+      box-shadow: 0 14px 30px rgba(255,122,0,.22);
+    }
+    .btnPrimary:hover{transform:translateY(-1px)}
+    .btnGhost{
+      background:rgba(255,255,255,.04);
+      border-color:rgba(255,255,255,.14);
+      color:#fff;
+    }
+    .btnGhost:hover{border-color:rgba(255,255,255,.26)}
+    .meta{
+      margin-top:14px;
+      color:var(--muted2);
+      font-size:13px;
+      line-height:1.5;
+    }
+    .bullets{
+      margin-top:18px;
+      display:grid;
+      gap:10px;
+    }
+    .bullet{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+    .dot{
+      width:10px;height:10px;margin-top:6px;border-radius:999px;
+      background:rgba(255,122,0,.9);
+      box-shadow:0 0 0 4px rgba(255,122,0,.16);
+      flex:0 0 auto;
+    }
+    .side h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .side p{
+      margin:0 0 16px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+    }
+    .mini{
+      padding:16px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(0,0,0,.14);
+    }
+    .footer{
+      margin-top:34px;
+      color:var(--muted2);
+      font-size:12px;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .footer a{color:var(--muted); text-decoration:none}
+    .footer a:hover{color:#fff}
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <h1>Costruisci il tuo business online partendo da ciò che ami.</h1>
-  <p>Strategie pratiche per monetizzare su Etsy, Shopify e Amazon Handmade. Anche se hai solo 2–3 ore a settimana.</p>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#">
+        <div class="logo">DML</div>
+        <span>DigitalMakerLab</span>
+      </a>
+      <a class="pill" href="https://bonus.digitalmakerlab.it">Bonus gratuito</a>
+    </div>
 
-  <a class="button" href="https://bonus.digitalmakerlab.it">Scarica la Mappa Operativa dei Primi 90 Giorni</a>
+    <div class="hero">
+      <div class="card">
+        <h1>Costruisci il tuo business online partendo da ciò che ami.</h1>
+        <p class="lead">
+          Strategie pratiche per monetizzare su <strong>Etsy</strong>, <strong>Shopify</strong> e <strong>Amazon Handmade</strong>.
+          Un percorso chiaro, senza fumo. Anche se hai solo <strong>2–3 ore a settimana</strong>.
+        </p>
 
-  <div class="small">Oppure visita il progetto DigitalMakerLab e scopri il libro in arrivo.</div>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://bonus.digitalmakerlab.it">Scarica la Mappa Operativa (PDF)</a>
+          <a class="btn btnGhost" href="https://bonus.digitalmakerlab.it">Accedi al bonus</a>
+        </div>
 
-  <div class="footer">© 2026 DigitalMakerLab — Tutti i diritti riservati.</div>
-</div>
+        <div class="meta">
+          Nessuno spam. Solo materiale operativo e risorse utili per far partire il tuo progetto con metodo.
+        </div>
+
+        <div class="bullets">
+          <div class="bullet"><div class="dot"></div><div><strong>Direzione:</strong> scegli nicchia, offerta e piattaforma senza disperderti.</div></div>
+          <div class="bullet"><div class="dot"></div><div><strong>Strategia:</strong> cosa fare nei primi 90 giorni per ottenere le prime prove reali.</div></div>
+          <div class="bullet"><div class="dot"></div><div><strong>Sostenibilità:</strong> un sistema minimo che regge anche con poco tempo.</div></div>
+        </div>
+      </div>
+
+      <div class="card side">
+        <h2>Il progetto DigitalMakerLab</h2>
+        <p>
+          Un ecosistema operativo per trasformare una passione (artigianato, creatività, digitale) in un business vero.
+          Il primo passo è semplice: entra nel funnel bonus e scarica la roadmap.
+        </p>
+
+        <div class="mini">
+          <p style="margin:0 0 10px;color:rgba(255,255,255,.9);font-weight:700">Bonus in evidenza</p>
+          <p style="margin:0;color:rgba(255,255,255,.72);font-size:14px;line-height:1.55">
+            <strong>La Mappa Operativa dei Primi 90 Giorni</strong><br>
+            Sistema minimo 2–3 ore a settimana + errori reali dei primi mesi.
+          </p>
+        </div>
+
+        <div class="ctaRow" style="margin-top:16px">
+          <a class="btn btnPrimary" href="https://bonus.digitalmakerlab.it">Scarica ora</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© 2026 DigitalMakerLab — Tutti i diritti riservati.</div>
+      <div>
+        <a href="https://bonus.digitalmakerlab.it">Bonus</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
