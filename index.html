@@ -17,7 +17,7 @@
       --text:#0B1F3B;
       --muted:rgba(11,31,59,.72);
       --border:rgba(11,31,59,.16);
-      --bg:#ffffff;
+      --bg:#F7F9FC;
     }
 
     *{ box-sizing:border-box; }
@@ -55,7 +55,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      margin-bottom:50px;
+      margin-bottom:60px;
     }
 
     .logo img{
@@ -72,18 +72,19 @@
     }
 
     h1{
-      margin:16px 0 10px;
-      font-size:clamp(28px, 4.2vw, 44px);
-      line-height:1.06;
-      letter-spacing:-.4px;
+      margin:10px 0 18px;
+      font-size:clamp(34px, 4.6vw, 52px);
+      line-height:1.08;
+      letter-spacing:-0.8px;
+      font-weight:700;
     }
 
     .sub{
-      margin:0 auto 26px;
-      max-width:52ch;
-      font-size:clamp(14px, 1.6vw, 18px);
-      line-height:1.55;
-      color:var(--muted);
+      margin:0 auto 34px;
+      max-width:56ch;
+      font-size:clamp(15px, 1.8vw, 19px);
+      line-height:1.7;
+      color:rgba(11,31,59,.75);
     }
 
     .actions{
@@ -95,37 +96,39 @@
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 18px;
-      border-radius:999px;
-      border:1px solid var(--border);
-      text-decoration:none;
-      font-weight:600;
-      transition:transform .08s ease, background-color .2s ease, border-color .2s ease;
-      user-select:none;
-    }
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 26px;
+  border-radius:999px;
+  border:1px solid rgba(11,31,59,.15);
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  transition:all .25s cubic-bezier(.4,0,.2,1);
+}
 
-    .btn:active{ transform:translateY(1px); }
+.btn.primary{
+  background:#0B1F3B;
+  color:#fff;
+  border-color:#0B1F3B;
+  box-shadow:0 8px 20px rgba(11,31,59,.15);
+}
 
-    .btn.primary{
-      background:var(--navy);
-      color:#fff;
-      border-color:var(--navy);
-    }
+.btn.primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(11,31,59,.25);
+}
 
-    .btn.primary:hover{ filter:brightness(1.03); }
+.btn.ghost{
+  background:#fff;
+  color:#0B1F3B;
+}
 
-    .btn.ghost{
-      background:#fff;
-      color:var(--navy);
-    }
-
-    .btn.ghost:hover{
-      background:rgba(11,31,59,.04);
-      border-color:rgba(11,31,59,.26);
-    }
+.btn.ghost:hover{
+  background:rgba(11,31,59,.05);
+  transform:translateY(-2px);
+}
 
     footer{
       padding:22px 20px 30x;
