@@ -11,19 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --navy:#0B1F3B;
-      --orange:#E85C00;
-      --text:#0B1F3B;
-      --muted:rgba(11,31,59,.65);
-      --border:rgba(11,31,59,.12);
-      --bg:#F7F9FC;
-      --card:#ffffff;
+    :root {
+      --navy: #0B1F3B;
+      --orange: #E85C00;
+      --text: #0B1F3B;
+      --muted: rgba(11,31,59,.65);
+      --border: rgba(11,31,59,.12);
+      --bg: #F7F9FC;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; padding: 0; }
+
     body {
+      margin: 0;
       font-family: Montserrat, system-ui, -apple-system, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
@@ -33,49 +33,73 @@
     /* NAV */
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 20px 32px;
-      border-bottom: 1px solid var(--border);
+      justify-content: space-between;
+      padding: 14px 40px;
       background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     .logo-wrap {
-      display: flex; align-items: center; gap: 10px; text-decoration: none;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
     .logo-wrap img {
-      height: 36px; width: auto; display: block;
+      height: 52px;
+      width: auto;
+      display: block;
     }
-    .logo-text { font-weight: 700; font-size: 17px; color: var(--navy); }
+    .btn-nav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 22px;
+      border-radius: 6px;
+      background: var(--orange);
+      color: #fff;
+      font-family: Montserrat, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background .2s;
+    }
+    .btn-nav:hover { background: #c94e00; }
 
     /* HERO */
     .hero {
-      padding: 72px 24px 56px;
       text-align: center;
-      max-width: 760px;
+      padding: 72px 24px 48px;
+      max-width: 740px;
       margin: 0 auto;
     }
     .eyebrow {
-      display: inline-block;
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: var(--orange);
+      display: block;
       margin-bottom: 16px;
     }
-    .hero h1 {
-      font-size: clamp(32px, 5vw, 52px);
+    h1 {
+      font-size: clamp(30px, 5vw, 52px);
       font-weight: 700;
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: -1px;
       color: var(--navy);
       margin: 0 0 20px;
     }
-    .hero h1 em { font-style: normal; color: var(--orange); }
+    h1 em { font-style: normal; color: var(--orange); }
     .hero-sub {
       font-size: clamp(15px, 1.8vw, 18px);
       color: var(--muted);
       line-height: 1.7;
       max-width: 52ch;
-      margin: 0 auto 32px;
+      margin: 0 auto;
     }
 
     /* BOOK SECTION */
@@ -84,113 +108,154 @@
       align-items: flex-start;
       gap: 48px;
       max-width: 860px;
-      margin: 0 auto;
+      margin: 48px auto 0;
       padding: 0 24px 64px;
       flex-wrap: wrap;
       justify-content: center;
     }
-
-    .book-cover-wrap {
-      flex-shrink: 0;
-      width: 190px;
-    }
+    .book-cover-wrap { flex-shrink: 0; }
     .book-cover-wrap img {
-      <img src="img/copertina.jpg"
-     alt="Monetizza le tue passioni online"
-     style="width:190px; border-radius:4px;
-            box-shadow:0 20px 60px rgba(11,31,59,.22);">
+      width: 200px;
+      border-radius: 4px;
+      box-shadow: 0 20px 50px rgba(11,31,59,.25), 0 4px 12px rgba(11,31,59,.12);
+      display: block;
     }
-    <img src="img/copertina.jpg" alt="Monetizza le tue passioni online" class="book-cover-wrap" style="width:190px; border-radius:4px; box-shadow:0 20px 60px rgba(11,31,59,.22);">
-    .cp-banner {
-      padding: 8px;
-      text-align: center;
-      font-size: 7.5px; font-weight: 700; color: #fff;
-      letter-spacing: .8px; line-height: 1.6; text-transform: uppercase;
-    }
-    .cp-body {
-      flex: 1; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 20px 12px;
-    }
-    .cp-t1 { font-size: 32px; font-weight: 700; color: var(--orange); letter-spacing: -1px; line-height: 1; }
-    .cp-t2 { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.2; text-align: center; margin-top: 2px; }
-    .cp-t3 { font-size: 24px; font-weight: 700; color: #fff; line-height: 1; margin-top: 2px; }
-    .cp-foot {
-      padding: 8px 12px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .cp-author { font-size: 7px; color: rgba(255,255,255,.55); font-weight: 700; letter-spacing: .5px; }
-    .cp-badge { background: var(--orange); color: #fff; font-size: 6px; font-weight: 700; padding: 2px 6px; border-radius: 3px; }
-
-    /* BOOK CONTENT */
     .book-content { flex: 1; min-width: 260px; padding-top: 4px; }
-    .book-title { font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 14px; }
-    .book-desc { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      display: block;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin: 0 0 14px;
+    }
+    .book-desc {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
 
-    /* BENEFICI */
-    .benefits { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 10px; }
-    .benefits li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text); line-height: 1.5; }
-    .benefits li strong { color: var(--navy); }
+    /* LISTA BENEFICI */
+    .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.5;
+    }
     .check {
-      width: 20px; height: 20px; border-radius: 50%;
-      background: var(--orange); flex-shrink: 0; margin-top: 1px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--orange);
       display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
     .check svg { width: 10px; height: 10px; fill: none; stroke: #fff; stroke-width: 2.5; }
 
     /* CTA */
     .cta-group { display: flex; gap: 10px; flex-wrap: wrap; }
-    .btn {
+    .btn-primary {
       display: inline-flex; align-items: center; justify-content: center;
-      padding: 13px 24px;
-      border-radius: 999px;
-      font-family: inherit; font-weight: 700; font-size: 14px; letter-spacing: .2px;
+      padding: 13px 24px; border-radius: 6px;
+      background: var(--orange); color: #fff;
+      font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 700;
       text-decoration: none; border: none; cursor: pointer;
-      transition: all .2s;
+      transition: background .2s;
     }
-    .btn-primary { background: var(--orange); color: #fff; }
-    .btn-primary:hover { background: #c94e00; transform: translateY(-1px); }
-    .btn-ghost { background: transparent; color: var(--navy); border: 1.5px solid rgba(11,31,59,.25); }
+    .btn-primary:hover { background: #c94e00; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 13px 24px; border-radius: 6px;
+      background: transparent; color: var(--navy);
+      font-family: Montserrat, sans-serif; font-size: 14px; font-weight: 600;
+      text-decoration: none;
+      border: 1.5px solid rgba(11,31,59,.25);
+      transition: border-color .2s;
+    }
     .btn-ghost:hover { border-color: var(--navy); }
 
     /* DIVIDER */
-    .divider { width: min(720px, 92%); height: 1px; background: var(--border); margin: 0 auto; }
-
-    /* BENEFICI SECTION */
-    .benefits-section {
-      max-width: 760px; margin: 0 auto; padding: 56px 24px;
+    .divider {
+      width: min(860px, 92%);
+      height: 1px;
+      background: var(--border);
+      margin: 0 auto;
     }
-    .section-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--orange); margin-bottom: 10px;
+
+    /* CARD BENEFICI */
+    .benefits-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px;
     }
     .section-title {
-      font-size: clamp(22px, 3vw, 30px); font-weight: 700; color: var(--navy);
-      line-height: 1.2; margin-bottom: 32px;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin: 0 0 32px;
     }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
     .benefit-card {
-      background: #fff; border-radius: 10px; padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
       border: 1px solid var(--border);
     }
     .benefit-num {
-      display: inline-block; width: 26px; height: 26px; border-radius: 50%;
-      background: var(--orange); color: #fff;
-      font-size: 12px; font-weight: 700; text-align: center; line-height: 26px;
+      display: inline-flex;
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--orange);
+      color: #fff;
+      font-size: 12px; font-weight: 700;
+      align-items: center; justify-content: center;
       margin-bottom: 10px;
     }
     .benefit-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
     .benefit-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
     /* BONUS */
-    .bonus-section { max-width: 760px; margin: 0 auto; padding: 0 24px 56px; }
+    .bonus-section {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 56px;
+    }
     .bonus-card {
-      background: #fff; border-radius: 10px; border: 1px solid var(--border);
-      padding: 24px; display: flex; gap: 16px; align-items: flex-start;
+      background: #fff;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
     }
     .bonus-icon {
-      width: 44px; height: 44px; border-radius: 8px; background: var(--orange);
+      width: 44px; height: 44px; border-radius: 8px;
+      background: var(--orange);
       display: flex; align-items: center; justify-content: center;
       font-size: 20px; flex-shrink: 0;
     }
@@ -201,18 +266,26 @@
 
     /* AUTORE */
     .author-section {
-      max-width: 760px; margin: 0 auto; padding: 0 24px 64px;
-      display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 64px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
     .author-avatar {
-      width: 60px; height: 60px; border-radius: 50%;
+      width: 56px; height: 56px; border-radius: 50%;
       background: var(--navy); color: #fff;
-      font-size: 18px; font-weight: 700;
+      font-size: 16px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
     .author-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-    .author-role { font-size: 11px; color: var(--orange); font-weight: 700; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 8px; }
+    .author-role {
+      font-size: 11px; font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; color: var(--orange); margin-bottom: 8px;
+    }
     .author-bio { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
     /* FOOTER */
@@ -222,16 +295,36 @@
       text-align: center;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.6;
     }
-    footer a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; }
-    footer a:hover { border-bottom-color: var(--navy); }
+    footer a { color: var(--navy); font-weight: 600; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
+    /* ========== MOBILE ========== */
     @media (max-width: 600px) {
-      nav { padding: 16px; }
-      .book-section { gap: 32px; }
-      .cover-placeholder { width: 150px; }
-      .cta-group { flex-direction: column; }
-      .btn { text-align: center; }
+      nav { padding: 12px 16px; }
+      .logo-wrap img { height: 38px; }
+      .btn-nav { font-size: 12px; padding: 9px 14px; }
+      .hero { padding: 40px 20px 36px; }
+      h1 { font-size: 28px; letter-spacing: -.5px; }
+      .book-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 20px 48px;
+        gap: 28px;
+      }
+      .book-cover-wrap img { width: 160px; }
+      .book-content { min-width: unset; }
+      .cta-group { flex-direction: column; width: 100%; }
+      .btn-primary, .btn-ghost {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+      .benefits-section { padding: 40px 20px; }
+      .grid { grid-template-columns: 1fr; }
+      .bonus-card { flex-direction: column; gap: 12px; }
+      .author-section { flex-direction: column; padding: 0 20px 48px; }
     }
   </style>
 </head>
@@ -240,19 +333,16 @@
 <!-- NAV -->
 <nav>
   <a href="/" class="logo-wrap">
-    <img src="img/logo.png" alt="DigitalMakerLab"
-         onerror="this.style.display='none'; document.getElementById('lt').style.display='inline';">
-    <span class="logo-text" id="lt" style="display:none;">DigitalMakerLab</span>
+    <img src="https://digitalmakerlab.it/img/logo.png" alt="DigitalMakerLab">
   </a>
-  <a class="btn btn-primary" href="http://www.amazon.it/dp/B0GS44RS9R/" target="_blank" rel="noopener"
-     style="font-size:13px; padding:10px 20px; border-radius:6px;">
-    Acquista su Amazon →
+  <a class="btn-nav" href="http://www.amazon.it/dp/B0GS44RS9R/" target="_blank" rel="noopener">
+    Acquista su Amazon &rarr;
   </a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <span class="eyebrow">Etsy &nbsp;·&nbsp; Shopify &nbsp;·&nbsp; Amazon Handmade</span>
+  <span class="eyebrow">Etsy &nbsp;&middot;&nbsp; Shopify &nbsp;&middot;&nbsp; Amazon Handmade</span>
   <h1>Hai una passione.<br>Non sai ancora <em>come venderla.</em></h1>
   <p class="hero-sub">Non manca il talento. Manca il metodo. Il libro che ti guida passo dopo passo nella costruzione di un business creativo reale — senza promesse vuote, senza scorciatoie.</p>
 </section>
@@ -260,24 +350,15 @@
 <!-- LIBRO + BENEFICI -->
 <section class="book-section">
   <div class="book-cover-wrap">
-    <!-- SOSTITUISCI con <img src="img/copertina.jpg" alt="Monetizza le tue passioni online"> -->
-    <div class="<img src="img/copertina.jpg" alt="Monetizza le tue passioni online">">
-      <div class="cp-banner">ETSY · SHOPIFY · AMAZON HANDMADE<br>GUIDA PRATICA ITALIANA</div>
-      <div class="cp-body">
-        <div class="cp-t1">MONETIZZA</div>
-        <div class="cp-t2">LE TUE PASSIONI</div>
-        <div class="cp-t3">ONLINE</div>
-      </div>
-      <div class="cp-foot">
-        <span class="cp-author">ADRIAN M. MORELL</span>
-        <span class="cp-badge">BONUS</span>
-      </div>
-    </div>
+    <img
+      src="https://digitalmakerlab.it/img/copertina.jpg"
+      alt="Monetizza le tue passioni online — Adrian M. Morell"
+    >
   </div>
 
   <div class="book-content">
-    <div class="section-label">Il libro</div>
-    <h2 class="book-title">Monetizza le tue passioni online</h2>
+    <span class="section-label">Il libro</span>
+    <h2>Monetizza le tue passioni online</h2>
     <p class="book-desc">Un metodo concreto per costruire un business su Etsy, Shopify e Amazon Handmade. Non è teoria. Non sono promesse. È un percorso pratico per chi parte da zero e vuole costruire qualcosa che duri.</p>
     <ul class="benefits">
       <li>
@@ -290,7 +371,7 @@
       </li>
       <li>
         <span class="check"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,2.5"/></svg></span>
-        <span><strong>Costruire inserzioni che si trovano e convertono</strong> — ottimizzazione SEO e comunicazione del valore</span>
+        <span><strong>Costruire inserzioni che si trovano e convertono</strong> — SEO e comunicazione del valore</span>
       </li>
       <li>
         <span class="check"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,2.5"/></svg></span>
@@ -302,43 +383,43 @@
       </li>
     </ul>
     <div class="cta-group">
-      <a href="http://www.amazon.it/dp/B0GS44RS9R/" target="_blank" rel="noopener" class="btn btn-primary">Acquista su Amazon →</a>
-      <a href="https://bonus.digitalmakerlab.it" target="_blank" rel="noopener" class="btn btn-ghost">Scarica il bonus gratuito</a>
+      <a href="http://www.amazon.it/dp/B0GS44RS9R/" target="_blank" rel="noopener" class="btn-primary">Acquista su Amazon &rarr;</a>
+      <a href="https://bonus.digitalmakerlab.it" target="_blank" rel="noopener" class="btn-ghost">Scarica il bonus gratuito</a>
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- BENEFICI DETTAGLIO -->
+<!-- CARD BENEFICI -->
 <section class="benefits-section">
-  <div class="section-label">Cosa trovi nel libro</div>
+  <span class="section-label">Cosa trovi nel libro</span>
   <h2 class="section-title">Un metodo completo, non una lista di consigli</h2>
   <div class="grid">
     <div class="benefit-card">
       <div class="benefit-num">1</div>
       <div class="benefit-title">Scelta della piattaforma giusta</div>
-      <div class="benefit-desc">Confronto approfondito tra Etsy, Shopify e Amazon Handmade. Cosa scegliere, quando e perché — senza una risposta universale.</div>
+      <p class="benefit-desc">Confronto approfondito tra Etsy, Shopify e Amazon Handmade. Cosa scegliere, quando e perché.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-num">2</div>
       <div class="benefit-title">Nicchia e validazione</div>
-      <div class="benefit-desc">Come trovare una nicchia con domanda reale e margine sostenibile, senza copiare gli altri o inseguire le mode del momento.</div>
+      <p class="benefit-desc">Come trovare una nicchia con domanda reale, senza copiare gli altri o inseguire le mode del momento.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-num">3</div>
       <div class="benefit-title">Brand e identità</div>
-      <div class="benefit-desc">Come costruire un brand riconoscibile che sia coerente con chi sei — senza snaturarsi e senza dover essere ovunque.</div>
+      <p class="benefit-desc">Come costruire un brand riconoscibile e coerente con chi sei — senza snaturarsi.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-num">4</div>
       <div class="benefit-title">Marketing e inserzioni</div>
-      <div class="benefit-desc">SEO per marketplace, ottimizzazione delle inserzioni, pricing sostenibile e strategie per farsi trovare dai clienti giusti.</div>
+      <p class="benefit-desc">SEO per marketplace, ottimizzazione delle inserzioni, pricing sostenibile e strategie per farsi trovare.</p>
     </div>
     <div class="benefit-card">
       <div class="benefit-num">5</div>
       <div class="benefit-title">Routine e continuità</div>
-      <div class="benefit-desc">Come costruire un sistema che non dipenda dall'entusiasmo del momento. Gestire blocchi, paure e tempo senza disperdere energie.</div>
+      <p class="benefit-desc">Come costruire un sistema che non dipenda dall'entusiasmo del momento. Gestire blocchi, paure e tempo.</p>
     </div>
   </div>
 </section>
@@ -351,8 +432,8 @@
     <div class="bonus-icon">🎁</div>
     <div>
       <div class="bonus-title">Bonus incluso con il libro</div>
-      <div class="bonus-desc">Hai già acquistato il libro? Accedi gratuitamente alla <strong>Mappa Operativa dei Primi 90 Giorni</strong> — il piano settimanale per iniziare subito, anche con poche ore a settimana.</div>
-      <a href="https://bonus.digitalmakerlab.it" target="_blank" class="bonus-cta">Scarica il bonus gratuito →</a>
+      <p class="bonus-desc">Hai già acquistato il libro? Accedi gratuitamente alla <strong>Mappa Operativa dei Primi 90 Giorni</strong> — il piano settimanale per iniziare subito, anche con poche ore a settimana.</p>
+      <a href="https://bonus.digitalmakerlab.it" target="_blank" rel="noopener" class="bonus-cta">Scarica il bonus gratuito &rarr;</a>
     </div>
   </div>
 </section>
@@ -371,9 +452,9 @@
 
 <!-- FOOTER -->
 <footer>
-  © <span id="y"></span> DigitalMakerLab &nbsp;·&nbsp;
-  <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
-  <a href="cookie.html">Cookie</a> &nbsp;·&nbsp;
+  &copy; <span id="y"></span> DigitalMakerLab &nbsp;&middot;&nbsp;
+  <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+  <a href="cookie.html">Cookie</a> &nbsp;&middot;&nbsp;
   <a href="mailto:info@digitalmakerlab.it">info@digitalmakerlab.it</a>
 </footer>
 
